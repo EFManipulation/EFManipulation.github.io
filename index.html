@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards Exploratory and Focused Manipulation with Bimanual Active Perception: A New Problem, Benchmark and Strategy</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://efmanipulation.github.io/">
+            EFM
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">Towards Exploratory and Focused Manipulation with Bimanual Active Perception: A New Problem, Benchmark and Strategy</h1>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset (Release Soon)</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, active vision has reemerged as an important concept for manipulation, since visual occlusion occurs more frequently when main cameras are mounted on the robot heads. We reflect on the visual occlusion issue and identify its essence as the absence of information useful for task completion. Inspired by this, we come up with the more fundamental problem of <b>E</b>xploratory and <b>F</b>ocused <b>M</b>anipulation (<b>EFM</b>). The proposed problem is about actively collecting information to complete challenging manipulation tasks that require exploration or focus. As an initial attempt to address this problem, we establish the EFM-10 benchmark that consists of 4 categories of tasks that align with our definition (10 tasks in total). We further come up with a <b>B</b>imanual <b>A</b>ctive <b>P</b>erception (<b>BAP</b>) strategy, which leverages one arm to provide active vision and another arm to provide force sensing while manipulating. Based on this idea, we collect a dataset named <b>BAPData</b> for the tasks in EFM-10. With the dataset, we successfully verify the effectiveness of the BAP strategy in an imitation learning manner. We hope that the EFM-10 benchmark along with the BAP strategy can become a cornerstone that facilitates future research towards this direction.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Tasks. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Examples of the 10 Tasks in EFM-10 (from our BAPData)</h2>
+
+
+        <h3 class="title is-3">Semantically Exploratory Tasks</h3>
+        <h4 class="title is-5">Toy-Find</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Pick a <i>[The-Required-Color]</i> toy from one of the compartments of the cabinet and place it on the table.
+          </p>
+        </div>
+        <video id="Toy-Find" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Toy-Find-1.mp4"
+                  type="video/mp4">
+        </video>
+        
+        <h4 class="title is-5">Toy-Match</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Pick the toy of the same color as the plate in <i>[The-Specified-Compartment]</i> and place it on the plate.
+          </p>
+        </div>
+        <video id="Toy-Match" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Toy-Match-1.mp4"
+                  type="video/mp4">
+        </video>
+
+
+        <h3 class="title is-3">Exploratory Tasks Involving Visual Occlusion</h3>
+        <h4 class="title is-5">Cup-Hang</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Pass the <i>[The-Required-Color]</i> cup and hang it onto the rack.
+          </p>
+        </div>
+        <video id="Cup-Hang" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Cup-Hang-1.mp4"
+                  type="video/mp4">
+        </video>
+        
+        <h4 class="title is-5">Cup-Place</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Pass the <i>[The-Required-Color]</i> cup and place it on the coaster.
+          </p>
+        </div>
+        <video id="Cup-Place" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Cup-Place-1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <h4 class="title is-5">Box-Push</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Push the box to the lined area.
+          </p>
+        </div>
+        <video id="Box-Push" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Box-Push-1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <h3 class="title is-3">Delicate Tasks Requiring Focus</h3>
+        <h4 class="title is-5">Light-Plug</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Plug the USB light into the charger.
+          </p>
+        </div>
+        <video id="Light-Plug" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Light-Plug-1.mp4"
+                  type="video/mp4">
+        </video>
+        
+        <h4 class="title is-5">Bread-Brush</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Place the bread dough on the tray and brush it with oil.
+          </p>
+        </div>
+        <video id="Bread-Brush" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Bread-Brush-1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <h4 class="title is-5">Nail-Knock</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Place the nail on the scrap of silver paper and knock the nail in.
+          </p>
+        </div>
+        <video id="Nail-Knock" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Nail-Knock-1.mp4"
+                  type="video/mp4">
+        </video>
+
+        <h3 class="title is-3">Complex Tasks Requiring Both Exploration and Focus
+        </h3>
+        <h4 class="title is-5">Cable-Match</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Insert the cable of the same color as the port.
+          </p>
+        </div>
+        <video id="Cable-Match" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Cable-Match-1.mp4"
+                  type="video/mp4">
+        </video>
+        
+        <h4 class="title is-5">Charger-Plug</h4>
+        <div class="content has-text-justified">
+          <p>
+            <b>Instruction:</b> Plug the USB charger into the <i>[Left/Middle/Right]</i> port of the power strip.
+          </p>
+        </div>
+        <video id="Charger-Plug" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Charger-Plug-1.mp4"
+                  type="video/mp4">
+        </video>
+
+      </div>
+    </div>
+    <!--/ Tasks. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Tasks. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiments</h2>
+
+
+        <h3 class="title is-4">Does the Eye-in-Hand Active Vision provided by the non-operating arm help?</h3>
+        <div class="content has-text-justified">
+          <p>
+            Preliminary experiments have been conducted on 4 tasks in EFM-10 to verify the idea of leveraging the non-operating arm to provide eye-in-hand active vision. Three different settings of visual context captured by the active view are compared here.
+          </p>
+        </div>
+        <video id="Eye-in-Hand" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/Eye-in-Hand-1.mp4"
+                  type="video/mp4">
+        </video>
+        <div class="content has-text-justified">
+          <p>
+            According to the results, it is desirable to capture both the manipulated area and the operating end effector in the active view to provide direct clues about how the operating end effector should adjust its pose.
+          </p>
+        </div>
+        
+        <h3 class="title is-4">How do representative policy models work in our EFM-10 Benchmark?</h3>
+        <div class="content has-text-justified">
+          <p>
+            We benchmark the performance of representative manipulation policies on EFM-10 in order to reveal the pros and cons of these policies. The evaluation results are shown in the following table.
+          </p>
+        </div>
+        <figure class="image">
+          <figcaption class="has-text-centered is-size-6"><b>“*” means that we train the policy with the BAPData collected based on our BAP strategy.</b></figcaption>
+          <img src="./static/images/benchmarking.png" alt="benchmarking" style="border-radius:10px;">
+          <figcaption class="has-text-centered is-size-6" style="margin-top:1rem;"> </figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            We can observe that:
+          </p>
+          <div class="content has-text-justified">
+            <ul>
+              <li>Single-task policies ACT and DP cannot fulfill language-driven semantically exploratory tasks, such as Toy-Find.</li>
+              <li>DP is superior to ACT on handling tasks with multimodal action distributions like Box-Push, but inferior to ACT on handling fine-grained tasks like Nail-Knock and Charger Plug.</li>
+              <li>Pi-0 show stronger instruction-following ability than GR-MG and can more easily master EFM tasks that do not involve fine-grained operation, such as Toy-Find, Cup-Hang and Cup-Place.</li>
+              <li>All these policies do not perform well EFM tasks that involve extremely fine-grained operation, such as Light-Plug and Charger-Plug.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Can Force/Torque sensing help?</h3>
+        <div class="content has-text-justified">
+          <p>
+            We further carry out experiments on enhancing policies with force sensing. Two EFM tasks that involve fine-grained operation are considered here. A variant of the GR-MG policy is devised, as illustrated in the following image. Concretely, we encode current Force/Torque value with a linear layer, append the encoded embedding as well as a query token to the original input sequence, and train the model to predict the chunk of future Fore/Torque based on the final representation of the query token.
+          </p>
+        </div>
+        <figure class="image">
+          <figcaption class="has-text-centered is-size-6"><b>An variant of the GR-MG policy with force sensing, developped by us.</b></figcaption>
+          <img src="./static/images/model.png" alt="model" style="border-radius:10px;">
+          <figcaption class="has-text-centered is-size-6" style="margin-top:1rem;"> </figcaption>
+        </figure>
+        <figure class="image">
+          <figcaption class="has-text-centered is-size-6"><b>“Avg. Fz Max” means the average of maximum vertical force of the operating end-effector.</b></figcaption>
+          <img src="./static/images/force.png" alt="force" style="border-radius:10px;">
+          <figcaption class="has-text-centered is-size-6" style="margin-top:1rem;"> </figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            With force sensing, the success rates increase substantially on the two tasks. More importantly, the averages of maximum vertical force decrease by 29% and 22% (relative to the average ranges), indicating that a sort of force compliance control is achieved with our neural network. To qualitatively analyze this phenomenon, we visualize a rollout by the GR-MG policy with force sensing.
+          </p>
+        </div>
+
+        <video id="FT" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/FT.mp4"
+                  type="video/mp4">
+        </video>
+        <div class="content has-text-justified">
+          <p>
+            It can be observed that: When the hand-held USB light began to contact with one side of the USB port, the model forecasted that the vertical force would increase and was able to control the end effector in a way that prevents abrupt boost of vertical force. When the USB light got plugged into the port, the model also correctly forecasted that the vertical force would decrease. These observations strongly support the significance of force sensing.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Tasks. -->
+
+  </div>
+</section>
+
+<section class="section" id="License">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title">License</h2>
+    </div>
+    <p>
+    Our <b>BAPData</b> will be released soon under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</section>
+
+<footer class="footer py-2">   <!-- py-2 或 py-1，减少上下内边距 -->
+  <div class="container">
+    <div class="columns is-centered my-0">   <!-- my-0 去掉上下外边距 -->
+      <div class="column is-8 py-1">         <!-- 减少列内边距 -->
+        <div class="content my-0">
+          <p class="my-0">This website is modified from the original <a href="https://nerfies.github.io/">Nerfies</a> website (<a href="https://github.com/nerfies/nerfies.github.io">source</a>).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
