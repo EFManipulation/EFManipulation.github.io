@@ -340,6 +340,144 @@
       </p>
     </div>
 
+    <h3 class="title is-6">Fail to accurately condition the action on the semantic context</h3>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Toy-Find
+        <br>
+        [Instruction]: Pick a <b>blue</b> toy from one of the compartment of the cabinet and place it on the table.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-toy-find" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Toy-Find.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Toy-Match
+        <br>
+        [Instruction]: Pick the toy of the <b>same color as the plate</b> in the right compartment and place it on the plate.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-toy-match" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Toy-Match.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Cable-Match
+        <br>
+        [Instruction]: Insert the cable of the <b>same color as the port</b>.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-cable-match" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/cases/Cable-Match.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+
+    <h3 class="title is-6">Fail to find the optimal active viewpoint</h3>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Cup-Place
+        <br>
+        [Instruction]: Pass the red cup to the right arm and place it on the coaster.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-cup-place" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/cases/Cup-place.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+
+    <h3 class="title is-6">Fail to adapt to corner cases</h3>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Cup-Hang
+        <br>
+        [Instruction]: Pass the white cup to the right arm and hang it onto the rack.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-cup-hang" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Cup-Hang.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Box-Push
+        <br>
+        [Instruction]: Push the box to the lined area.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-box-push" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Box-Push.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+
+    <h3 class="title is-6">Inadequate spatial perception/reasoning that leads to subtle wrong positioning</h3>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Light-Plug
+        <br>
+        [Instruction]: Plug the USB light into the charger.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-light-plug" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Light-Plug.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Bread-Brush
+        <br>
+        [Instruction]: Place the bread dough on the tray and brush it with oil.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-bread-brush" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Bread-Brush.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Nail-Knock
+        <br>
+        [Instruction]: Place the nail on the scrap of silver paper and knock the nail in.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-nail-knock" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Nail-Knock.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        [Task]: Charger-Plug
+        <br>
+        [Instruction]: Plug the USB charger into the middle port of the power strip.
+      </p>
+      <div class="has-text-centered">
+      <video id="case-bread-brush" autoplay controls muted loop playsinline height="50%">
+        <source src="./static/cases/Charger-Plug.mp4"
+                type="video/mp4">
+      </video>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -349,7 +487,7 @@
     <h2 class="title">License</h2>
     </div>
     <p>
-    Our <b>BAPData</b> will be released soon under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    Our <b>BAPData</b> will be released upon publication with a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
     </p>
   </div>
 </section>
@@ -357,9 +495,9 @@
 <footer class="footer py-2">   <!-- py-2 或 py-1，减少上下内边距 -->
   <div class="container">
     <div class="columns is-centered my-0">   <!-- my-0 去掉上下外边距 -->
-      <div class="column is-8 py-1">         <!-- 减少列内边距 -->
+      <div class="column is-9 py-2">         <!-- 减少列内边距 -->
         <div class="content my-0">
-          <p class="my-0">This website is modified from the original <a href="https://nerfies.github.io/">Nerfies</a> website (<a href="https://github.com/nerfies/nerfies.github.io">source</a>) and licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+          <p class="my-0">This website is modified from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a> and licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
         </div>
       </div>
     </div>
